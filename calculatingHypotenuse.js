@@ -11,17 +11,21 @@ function calculateSumOfSquares(a,b){
 console.log("lets go")
 
 function calculateHypotenuse(){
-    console.log((Number(firstSide.value)),(Number(secondSide.value)));
-    if(Number(firstSide.value) < 0 || Number(secondSide.value < 0)){
-        console.log("working");
-        output.innerText = "Please Enter Valid Inputs!";
-    } 
-    else{
-        console.log("not negative");
-        const sumOfSquares = calculateSumOfSquares(Number(firstSide.value), Number(secondSide.value));
-        const lengthOfHypotenuse = (Math.sqrt(sumOfSquares)).toFixed(2);
-        output.innerText = "The Lenght of the Hypotenuse is " + lengthOfHypotenuse;
+    if((Number(firstSide.value)) > 0 && (Number(secondSide.value) > 0)){
+        if(Number(firstSide.value) < 0 || Number(secondSide.value < 0)){
+            console.log("working");
+            output.innerText = "Please Enter Valid Inputs!";
+        } 
+        else{
+            console.log("not negative");
+            const sumOfSquares = calculateSumOfSquares(Number(firstSide.value), Number(secondSide.value));
+            const lengthOfHypotenuse = (Math.sqrt(sumOfSquares)).toFixed(2);
+            output.innerText = "The Lenght of the Hypotenuse is " + lengthOfHypotenuse;
+        }
+    } else {
+        output.innerText = "Please Enter Valid Inputs";
     }
+    
 }
 
 btn.addEventListener("click", calculateHypotenuse);
